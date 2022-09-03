@@ -73,6 +73,7 @@
 # else:
 #     print("não achou")
 # ex encontrar o numero 3 na busca binaria
+
 v = [0] * 10
 v[0] = 1
 v[1] = 3
@@ -85,22 +86,22 @@ v[7] = 15
 v[8] = 17
 v[9] = 19
 
-i_valor = -1
-i = 0 
-f = len(v) - 1
-valor = int(input("pesquise um valor: "))
+i_valor = -1 # so é usado para falar se achou ou não
+i = 0 # é onde vai iniciar a busca no vetor
+f = len(v) - 1 # é o final do vetor
+valor = int(input("pesquise um valor: ")) # valor a ser buscado
 
 while(i <= f):
-    m = int((i+f)/2)
-    if(v[m] == valor):
-        i_valor = m 
+    m = int((i+f)/2) # meio do vetor para diminuir o raio de busca
+    if(v[m] == valor): # usa o meio do vetor para verificar se existe
+        i_valor = m # muda o valor para falar que achou e se não achar so sai do while
         break
-    elif(valor > v[m]):
+    elif(valor > v[m]): # se o valor da busca for maior que o do meio então o vetor inicial vai ser 1 maior que o vetor do meio
         i = m + 1
-    else:
+    else: #c se o valor da busca for menor que o do meio então o vetor final vai ser 1 menor que o vetor do meio
         f = m - 1
 
-if(i_valor >= 0):
+if(i_valor >= 0): # se o valor ser encontrado i_valor vai ser no minimo 0 e significa que achou
     print("achou")
-else:
+else: # se o valor não ser encontrado i_valor vai se manter -1 como indica antes do while
     print("não achou")
