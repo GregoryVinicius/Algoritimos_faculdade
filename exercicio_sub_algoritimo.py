@@ -1,7 +1,8 @@
-# import random
-# import math
-# import os
-# import time
+import random
+import math
+import os
+import time
+import minhas_funcoes
 
 # def soma():
 #     x = int(input("primeiro valor: "))
@@ -80,3 +81,12 @@
 # print(a)
 # print(b)
 # print(c)
+
+# implemetar um procedimento chamado 'coisa' o procedimento precisa de 3 valores numericos, e deve mostrar na tela
+# qual dos 3 é o maior
+v = [0] * 3
+a = int(input("insira o 1º valor: "))
+b = int(input("insira o 2º valor: "))
+c = int(input("insira o 3º valor: "))
+
+minhas_funcoes.coisa(a,b,c)
