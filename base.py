@@ -88,5 +88,18 @@ def ordenar (v, ord):
             temp = v[i]
             v[i] = menor
             v[i_menor] = temp
+    else:
+        for i in range(0, len(v)-1):
+            menor = v[i]
+            i_menor = i
+
+            for j in range(i+1, len(v)):
+                if(v[j] < menor):
+                    menor = v[j]
+                    i_menor = j
+
+            temp = v[i]
+            v[i] = menor
+            v[i_menor] = temp
 
     return v
