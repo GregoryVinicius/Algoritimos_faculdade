@@ -41,8 +41,6 @@ cursor.execute(sql, valores)
 
 banco.commit()
 
-for i in range (0, cursor.rowcount):
-    print(resultados[i])
-    print()
+
 cursor.close
 banco.close
