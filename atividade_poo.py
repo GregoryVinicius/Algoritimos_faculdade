@@ -20,17 +20,24 @@ def lerDados():
 
     cursor.execute(sql)
 
-    resultados = cursor.fetchall()
+    dados = cursor.fetchall
 
-    for linha in resultados:
-        print(linha)
-        print("Codigo: ", linha[0])
-        print("Nome: ", linha[1])
-        print("Ch: ", linha[2])
-        print("Professor: ", linha[3])
-        print("chr: ", linha[4])
-        print()
+    resultados = [Disciplina()] * cursor.rowcount
 
+    i = 0
+
+    for linha in dados:
+        d = Disciplina()
+        d.codigo = linha[0]
+        d.nome = linha[1]
+        d.ch = linha[2]
+        d.professor = linha[3]
+        d.chr = linha[4]
+
+        resultados[i] = d
+        i += 1
+
+        return resultados
 
 class Disciplina:
     def __init__(self):
